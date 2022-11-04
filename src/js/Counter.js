@@ -14,7 +14,7 @@ function countCheckboxes() {
 }
 
 $(document).ready(function() {
-    $('label.label-click').click(function() {
+    $('.label-click').click(function() {
         
         countCheckboxes();
     });
