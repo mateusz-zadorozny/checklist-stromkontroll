@@ -8,14 +8,18 @@ const { title, id } = Astro.props;
 ---
 
 
-<div class="label-click">
-    <input type="checkbox" id={id} class="check"/>
-    <label for={id}>
+<div class="mb-1">
+    <input type="checkbox" id={id} class="cursor-pointer check label-click"/>
+    <label for={id} class="cursor-pointer">
       <span><!-- This span is needed to create the "checkbox" element --></span>{title}
     </label>
 </div>
 
 <style>
+
+label {
+    transition: color 350ms ease-in-out;
+}
 
 .check:checked + label {
     color: grey;
