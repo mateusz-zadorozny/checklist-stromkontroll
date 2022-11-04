@@ -8,9 +8,9 @@ const { title, id } = Astro.props;
 ---
 
 
-<div class="mb-1">
-    <input type="checkbox" id={id} class="cursor-pointer check label-click"/>
-    <label for={id} class="cursor-pointer">
+<div class="flex flex-row mb-8">
+    <input type="checkbox" id={id} class="cursor-pointer check label-click mr-2 shrink-0 self-center"/>
+    <label for={id} class="cursor-pointer text-darkblue text-xl ml-4 self-center">
       <span><!-- This span is needed to create the "checkbox" element --></span>{title}
     </label>
 </div>
@@ -18,12 +18,29 @@ const { title, id } = Astro.props;
 <style>
 
 label {
-    transition: color 350ms ease-in-out;
+    transition: opacity 350ms ease-in-out;
 }
 
 .check:checked + label {
-    color: grey;
+    opacity: 0.3;
     text-decoration: line-through;
+}
+
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  font: inherit;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked {
+	background-color: #022A46;
+	width: 44px;
+    height: 44px;
+	border: 7px solid #FFF;
 }
 
 </style>

@@ -4,13 +4,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			'sans': ['Open Sans', 'sans-serif'] 
-		},
-		colors: {
-			'darkblue': '#022A46',
-			'darkgreen': '#04AB83',
-			'lightgreen': '#73F4C2',
-			'white': '#FFF',
-		},
+		}
 		extend: {},
 	},
 	plugins: [],
