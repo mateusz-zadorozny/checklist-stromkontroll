@@ -8,7 +8,7 @@ import Logo from "../components/Logo.astro";
 import NewToggle from "../components/NewToggle.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Sjekkliste installasjon StrømKontroll | Checklist installation StrømKontroll">
 	<Bar />
 
 	<main class="flex flex-col max-w-md m-auto px-4 pb-6">
@@ -21,7 +21,8 @@ import NewToggle from "../components/NewToggle.astro";
 		</div>
 
 		<h1 class="text-4xl mb-8 font-bold text-darkblue">
-			Sjekkliste installasjon StrømKontroll:
+			<span class="noNB">Sjekkliste installasjon StrømKontroll:</span
+			><span class="enEN">Checklist installation StrømKontroll:</span>
 		</h1>
 
 		<Element
@@ -50,14 +51,18 @@ import NewToggle from "../components/NewToggle.astro";
 			id="5"
 		/>
 
-		<h2 class="text-4xl mb-8 font-bold text-darkblue">Monter enhetene:</h2>
+		<h2 class="text-4xl mb-8 font-bold text-darkblue">
+			<span class="noNB">Monter enhetene:</span><span class="enEN"
+				>Mount the devices:
+			</span>
+		</h2>
 
 		<Element title="Termostat." english="Thermostat." id="6" />
 		<Element
 			title="Velg riktig temperaturføler på selve termostaten."
 			english="Choose the right temperature sensor on the thermostat itself."
 			link="CHANGE IT PLEASE"
-			linkSet = true
+			linkSet="true"
 			id="7"
 		/>
 		<Element title="Relé." english="Relay." id="8" />
@@ -97,12 +102,12 @@ import NewToggle from "../components/NewToggle.astro";
 			english="Check that Event Collector is downloaded. If not, download it. (Settings -> Playground -> Event collector -> Download)."
 			id="17"
 		/>
-		
+
 		<Element
-		title="Aktiver energioptimaliseringen “StrømKontroll”. (På forsiden, trykk Energi -> Lynet oppe til høyre -> Aktiver Strømkontroll)."
-		english="Activate the energy optimization “StrømKontroll/Power Manager”. (On the front page, tap Energy -> Lightning on the top right -> Enable Power Control)."
+			title="Aktiver energioptimaliseringen “StrømKontroll”. (På forsiden, trykk Energi -> Lynet oppe til høyre -> Aktiver Strømkontroll)."
+			english="Activate the energy optimization “StrømKontroll/Power Manager”. (On the front page, tap Energy -> Lightning on the top right -> Enable Power Control)."
 			link="https://support.futurehome.no/hc/no/articles/6671235365533-Str%C3%B8mKontroll"
-			linkSet = true
+			linkSet="true"
 			id="19"
 		/>
 		<Element
@@ -122,6 +127,16 @@ import NewToggle from "../components/NewToggle.astro";
 		/>
 	</main>
 </Layout>
+
+<style>
+	body.enEN span.noNB {
+		display: none;
+	}
+
+	body.noNB span.enEN {
+		display: none;
+	}
+</style>
 
 <script
 	src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
