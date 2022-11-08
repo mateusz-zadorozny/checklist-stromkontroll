@@ -1,3 +1,5 @@
+var completedInstallation = false;
+
 function countCheckboxes() {
     //alert($('.check-box :checked').size());
 
@@ -9,6 +11,10 @@ function countCheckboxes() {
             * 100);
         $('#percent').text(percentComplete);
         document.getElementById("indicator").style.width = percentComplete + "%";
+        if (percentComplete > 1 && completedInstallation != true) {
+            completedInstallation = true;
+            $("#completed").removeClass("hidden");
+        }
     }, delayInMilliseconds);
 
 

@@ -2,45 +2,29 @@
 import Logo from "./Logo.astro";
 ---
 
-<div id="completed" class="w-full bg-darkblue min-h-screen">
+<div
+    id="completed"
+    class="z-50 w-full bg-darkblue sticky top-0 flex flex-col hidden justify-items-center"
+>
     <div
         id="completed-inner"
-        class="z-50 flex flex-col max-w-md m-auto px-4 pb-6"
+        class="flex flex-col justify-items-center max-w-md m-auto pb-10 pt-4 px-6"
     >
-        <Logo source="logo-dark.svg" />
-        <h2 class="text-white text-5xl font-bold">Gratulerer!</h2>
-        <h3 class="text-white text-4xl mb-8 font-bold">
-            Du har fullført installasjonen
-        </h3>
-    </div>
-    <div id="completed-light" class="w-full bg-lightgreen">
-        <div class="shape top">
-            <svg
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1200 120"
-                preserveAspectRatio="none"
-            >
-                <path
-                    d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-        <div
-            id="completed-light-inner"
-            class="flex flex-col max-w-md m-auto px-4 pb-6"
-        >
-            <h3 id="stromkontroll" class="text-darkblue font-bold text-3xl">
-                StrømKontroll™
+        <svg
+            id="close"
+            class="max-h-10 mt-4 fill-white ml-auto justify-self-end"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            ><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+                d="M175 175C184.4 165.7 199.6 165.7 208.1 175L255.1 222.1L303 175C312.4 165.7 327.6 165.7 336.1 175C346.3 184.4 346.3 199.6 336.1 208.1L289.9 255.1L336.1 303C346.3 312.4 346.3 327.6 336.1 336.1C327.6 346.3 312.4 346.3 303 336.1L255.1 289.9L208.1 336.1C199.6 346.3 184.4 346.3 175 336.1C165.7 327.6 165.7 312.4 175 303L222.1 255.1L175 208.1C165.7 199.6 165.7 184.4 175 175V175zM0 96C0 60.65 28.65 32 64 32H448C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96zM48 96V416C48 424.8 55.16 432 64 432H448C456.8 432 464 424.8 464 416V96C464 87.16 456.8 80 448 80H64C55.16 80 48 87.16 48 96z"
+            ></path>
+        </svg>
+        <div class="justify-center flex flex-col">
+            <h2 class="text-white text-5xl font-bold">Gratulerer!</h2>
+            <h3 class="text-white text-4xl font-bold">
+                Du har fullført installasjonen
             </h3>
-            <h5 id="slogan" class="text-darkblue font-bold">
-                SPAR ENERGI OG PENGER
-            </h5>
-        </div>
-        <div class="custom-shape-divider-bottom-1667581712">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-            </svg>
         </div>
     </div>
 </div>
@@ -49,27 +33,10 @@ import Logo from "./Logo.astro";
     .hidden {
         display: none;
     }
-
-    .custom-shape-divider-bottom-1667581712 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1667581712 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 30px;
-}
-
-.custom-shape-divider-bottom-1667581712 .shape-fill {
-    fill: #022A46;
-}    
-
-
 </style>
+
+<script>
+    $("#close").click(function () {
+        $("#completed").addClass("hidden");
+    });
+</script>

@@ -6,4 +6,6 @@ export interface Props {
 const { source } = Astro.props;
 ---
 
-<img src={source} width="180px" height="22px"/>
+<div class="w-full flex mt-4 sm:mt-0">
+	<img src={source} width="180px" height="22px" class="mx-auto" />
+</div>

@@ -4,17 +4,22 @@ export interface Props {
     english: string;
     id: string;
     link: string;
+    linkEN: string;
     linkSet: boolean;
 }
 
-const { title, english, id, link, linkSet } = Astro.props;
+const { title, english, id, link, linkEN, linkSet } = Astro.props;
 ---
 
 
 <div class="flex flex-row mb-8">
     <input type="checkbox" id={id} class="cursor-pointer check label-click mr-2 shrink-0 self-center"/>
     <label for={id} class="cursor-pointer text-darkblue text-xl ml-4 self-center">
-      <span><!-- This span is needed to create the "checkbox" element --></span><span class="noNB">{title}{linkSet && <span> </span><a target="_blank" href={link}>Trykk her for manual.</a>}</span><span class="enEN">{english}{linkSet && <span> </span><a target="_blank" href={link}>Click here for the manual.</a>}</span>
+        <span><!-- This span is needed to create the "checkbox" element --></span>
+        <span class="noNB">{title}{linkSet && <span> </span>
+            <a target="_blank" href={link}>Trykk her for manual.</a>}</span>
+        <span class="enEN">{english}{linkSet && <span> </span>
+            <a target="_blank" href={linkEN}>Click here for the manual.</a>}</span>
     </label>
     
 </div>
