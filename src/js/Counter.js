@@ -11,7 +11,7 @@ function countCheckboxes() {
             * 100);
         $('#percent').text(percentComplete);
         document.getElementById("indicator").style.width = percentComplete + "%";
-        if (percentComplete > 1 && completedInstallation != true) {
+        if (percentComplete > 99 && completedInstallation != true) {
             completedInstallation = true;
             $("#completed").removeClass("hidden");
         }
