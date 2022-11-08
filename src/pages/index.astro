@@ -1,63 +1,131 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Element from '../components/Element.astro';
-import Bar from '../components/Bar.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Element from "../components/Element.astro";
+import Bar from "../components/Bar.astro";
+import CompleteScreen from "../components/CompleteScreen.astro";
+import Logo from "../components/Logo.astro";
+import NewToggle from "../components/NewToggle.astro";
 ---
 
 <Layout title="Welcome to Astro.">
 	<Bar />
 
 	<main class="flex flex-col max-w-md m-auto px-4 pb-6">
-		<img src="../logo-ch.svg" class="w-44 mt-5 xl:mt-10 2xl:mt-10 mb-10"/>
-		<h1 class="text-4xl mb-8 font-bold text-darkblue">Sjekkliste installasjon StrømKontroll:</h1>
+		<div
+			class="flex flex-row content-center justify-between mt-5 xl:mt-10 2xl:mt-10 mb-10"
+		>
+			<Logo source="../logo-ch.svg" />
 
-			<Element
-				title="Sjekk at alle komponenter er i boksen. (Smarthub, Termostat, Relé og HAN-sensor)"
-				id="1"
-			/>
+			<NewToggle />
+		</div>
 
-			<Element
-				title="Har kunden åpnet HAN-porten? (Dette gjøres via nettleieselskapet)"
-				id="2"
-			/>
+		<h1 class="text-4xl mb-8 font-bold text-darkblue">
+			Sjekkliste installasjon StrømKontroll:
+		</h1>
 
-			<Element
-				title="Koble Smarthuben til strøm og nettverk"
-				id="3"
-			/>
+		<Element
+			title="Sjekk at alle komponenter er i boksen. (Smarthub, Termostat, Relé og HAN-sensor)."
+			english="Check that all components are in the box. (Smarthub, Thermostat, Relay and HAN sensor)."
+			id="1"
+		/>
+		<Element
+			title="Har kunden åpnet HAN-porten? (Dette gjøres via nettselskapet)."
+			english="Has the customer opened the HAN port? (This is done via the grid company)."
+			id="2"
+		/>
+		<Element
+			title="Koble Smarthuben til strøm og nettverk."
+			english="Connect the Smarthub to power and network."
+			id="3"
+		/>
+		<Element
+			title="Last ned Futurehome appen, registrer bruker og logg inn. Hopp over denne om du har gjort dette fra før."
+			english="Download the Futurehome app, register as a user and log in. Skip this if you have done this before."
+			id="4"
+		/>
+		<Element
+			title="Opprett husholdning i appen og kall den gjerne det samme som adressen. F.eks. Smarthus gate 1."
+			english="Create a household in the app and call it the same as the address. eg. “Smarthus gate 1”."
+			id="5"
+		/>
 
-			<Element
-				title="Last ned Futurehome appen, registrer bruker og logg inn. Hopp over denne om du har gjort dette fra før"
-				id="4"
-			/>
+		<h2 class="text-4xl mb-8 font-bold text-darkblue">Monter enhetene:</h2>
 
-			<Element
-				title="Opprett husholdning i appen og kall den gjerne det samme som adressen. F.eks. Smarthus gate 1"
-				id="5"
-			/>
-
-		<h2 class="text-4xl mb-8 font-bold text-darkblue">
-			Monter enhetene:</h2>
-
-			<Element
-				title="Velg riktig temperaturføler på selve termostaten"
-				id="6"
-			/>
-
-			<Element
-				title="Relé"
-				id="7"
-			/>
-
-			<Element
-				title="HAN-sensor"
-				id="8"
-			/>
-
-
+		<Element title="Termostat." english="Thermostat." id="6" />
+		<Element
+			title="Velg riktig temperaturføler på selve termostaten."
+			english="Choose the right temperature sensor on the thermostat itself."
+			link="CHANGE IT PLEASE"
+			linkSet = true
+			id="7"
+		/>
+		<Element title="Relé." english="Relay." id="8" />
+		<Element title="HAN-sensor." english="HAN sensor." id="9" />
+		<Element
+			title="Par opp Smarthuben. MERK: Før du scanner QR-koden, sørg for at du har ventet minst 5 minutter fra du koblet opp Smarthuben. Dette for å være sikker på at den har startet skikkelig opp. (Om du får feilmelding ved scanning etter 8-10 min, sjekk nettverkstilkoblingen)."
+			english="Pair the Smarthub. NOTE: Before scanning the QR code, make sure you have waited at least 5 minutes since you connected the Smarthub. This is to be sure that it has started and updated properly. (If you get an error message when scanning after 8-10 minutes, check the network connection)."
+			id="10"
+		/>
+		<Element
+			title="I appen, opprett rommene som enhetene er montert i (om disse ikke ligger inne)."
+			english="In the app, create the rooms in which the devices are mounted (if these are not added by default)."
+			id="11"
+		/>
+		<Element
+			title="Inkluder enhetene i appen. (Start med enheten nærmest hube og jobb deg utover. HAN-sensor kan ta noe lenger tid enn de andre. Vær tålmodig med denne)."
+			english="Include the devices in the app. (Start with the unit closest to the hub and work your way out. HAN sensor may take a bit longer than the others. Be patient with this one)."
+			id="12"
+		/>
+		<Element
+			title="For førstegangsparring av HAN sensor, ha Smarthub og HAN så nære hverandre som mulig."
+			english="First pairing of the HAN sensor, have Smarthub and HAN as close to each other as possible."
+			id="13"
+		/>
+		<Element
+			title="Plasser enhetene i sine tilhørende rom i appen."
+			english="Place the devices in their respective rooms in the app."
+			id="14"
+		/>
+		<Element
+			title="Test at de responderer fra appen og at HAN-sensoren melder inn forbruk."
+			english="Test that the devices respond from the app and that the HAN sensor reports consumption."
+			id="15"
+		/>
+		<Element
+			title="Sjekk at Event Collector er lastet ned. Hvis ikke, last den ned. (Innstillinger -> Playground -> Event collector -> Last ned)."
+			english="Check that Event Collector is downloaded. If not, download it. (Settings -> Playground -> Event collector -> Download)."
+			id="17"
+		/>
+		
+		<Element
+		title="Aktiver energioptimaliseringen “StrømKontroll”. (På forsiden, trykk Energi -> Lynet oppe til høyre -> Aktiver Strømkontroll)."
+		english="Activate the energy optimization “StrømKontroll/Power Manager”. (On the front page, tap Energy -> Lightning on the top right -> Enable Power Control)."
+			link="https://support.futurehome.no/hc/no/articles/6671235365533-Str%C3%B8mKontroll"
+			linkSet = true
+			id="19"
+		/>
+		<Element
+			title="Ta en sikkerhetskopi. Innstillinger -> husholdning -> hub-innstillinger -> lag sikkerhetskopi. Merk at Zigbee-enheter ikke lar seg kopiere på dette tidspunktet. Sikkerhetskopien tar for seg husholdningsinnstillingene."
+			english="Create a backup. Settings -> household -> hub settings -> create backup. Note that Zigbee devices cannot be backed up as of now. The backup saves the general household settings."
+			id="20"
+		/>
+		<Element
+			title="Overfør eierskap til kunden. (Innstillinger -> husholdning -> overfør eierskap)."
+			english="Transfer ownership to the customer. (Settings -> household -> transfer ownership)."
+			id="21"
+		/>
+		<Element
+			title="Ta en gjennomgang av appen og systemet med kunden."
+			english="Go through the app and system with the customer."
+			id="22"
+		/>
 	</main>
 </Layout>
 
-<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+<script
+	src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+	integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+	crossorigin="anonymous"
+></script>
 <script src="../js/Counter.js"></script>

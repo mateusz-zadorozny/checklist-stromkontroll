@@ -14,6 +14,10 @@ function countCheckboxes() {
 
 }
 
+function completeCount() {
+    
+}
+
 $(document).ready(function() {
     $('.label-click').click(function() {
         countCheckboxes();

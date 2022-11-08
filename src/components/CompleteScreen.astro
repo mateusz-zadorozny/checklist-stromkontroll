@@ -1,0 +1,75 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<div id="completed" class="w-full bg-darkblue min-h-screen">
+    <div
+        id="completed-inner"
+        class="z-50 flex flex-col max-w-md m-auto px-4 pb-6"
+    >
+        <Logo source="logo-dark.svg" />
+        <h2 class="text-white text-5xl font-bold">Gratulerer!</h2>
+        <h3 class="text-white text-4xl mb-8 font-bold">
+            Du har fullført installasjonen
+        </h3>
+    </div>
+    <div id="completed-light" class="w-full bg-lightgreen">
+        <div class="shape top">
+            <svg
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+        <div
+            id="completed-light-inner"
+            class="flex flex-col max-w-md m-auto px-4 pb-6"
+        >
+            <h3 id="stromkontroll" class="text-darkblue font-bold text-3xl">
+                StrømKontroll™
+            </h3>
+            <h5 id="slogan" class="text-darkblue font-bold">
+                SPAR ENERGI OG PENGER
+            </h5>
+        </div>
+        <div class="custom-shape-divider-bottom-1667581712">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .custom-shape-divider-bottom-1667581712 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1667581712 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 30px;
+}
+
+.custom-shape-divider-bottom-1667581712 .shape-fill {
+    fill: #022A46;
+}    
+
+
+</style>
