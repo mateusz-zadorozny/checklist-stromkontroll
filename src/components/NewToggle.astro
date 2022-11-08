@@ -1,67 +1,69 @@
-<ul class="flex flex-col content-center sm:space-x-4 sm:flex-row md:flex-row lg:flex-row xl:flex-row 2xl:flex-row" id="radio_box">
-   
+<ul
+    class="flex flex-col content-center sm:space-x-4 sm:flex-row md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
+    id="radio_box"
+>
     <li class="flex flex-row m-1">
-        <input type="radio" id="noNB" name="selector" checked value="noNB">
-        <label for="noNB" class="cursor-pointer text-darkblue font-bold text-xl ml-2 self-center">NO</label>
-        
-        <div class="check"></div>
-      </li>
-      
-    <li class="flex flex-row m-1">
-        <input type="radio" id="english" name="selector" value="enEN">
-        <label for="english" class="cursor-pointer text-darkblue font-bold text-xl ml-2 self-center">EN</label>
-        
+        <input type="radio" id="noNB" name="selector" checked value="noNB" />
+        <label
+            for="noNB"
+            class="cursor-pointer text-darkblue font-bold text-xl ml-2 self-center"
+            >NO</label
+        >
+
         <div class="check"></div>
     </li>
 
+    <li class="flex flex-row m-1">
+        <input type="radio" id="english" name="selector" value="enEN" />
+        <label
+            for="english"
+            class="cursor-pointer text-darkblue font-bold text-xl ml-2 self-center"
+            >EN</label
+        >
+
+        <div class="check"></div>
+    </li>
 </ul>
-    
 
 <script>
-
-$('input[type=radio][name=selector]').change(function() {
-    if (this.value == 'noNB') {
-        $('body').addClass("noNB");
-        $('body').removeClass("enEN");
-        console.log("Nooooooooooo");
-    }
-    else if (this.value == 'enEN') {
-        $('body').addClass("enEN");
-        $('body').removeClass("noNB");
-        console.log("English Sir!");
-    }
-});
-
+    $("input[type=radio][name=selector]").change(function () {
+        if (this.value == "noNB") {
+            $("body").addClass("noNB");
+            $("body").removeClass("enEN");
+            console.log("Nooooooooooo");
+        } else if (this.value == "enEN") {
+            $("body").addClass("enEN");
+            $("body").removeClass("noNB");
+            console.log("English Sir!");
+        }
+    });
 </script>
 
-
 <style>
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        font: inherit;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
 
-input[type="radio"] {
-  appearance: none;
-  background-color: #fff;
-  font: inherit;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-}
+    input[type="radio"]:checked {
+        background-color: #022a46;
+        width: 36px;
+        height: 36px;
+        border: 5px solid #fff;
+    }
 
-input[type="radio"]:checked {
-	background-color: #022A46;
-	width: 36px;
-    height: 36px;
-	border: 5px solid #FFF;
-}
+    label {
+        transition: opacity 350ms ease-in-out;
+    }
 
-label {
-    transition: opacity 350ms ease-in-out;
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-}
-
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+    }
 </style>
