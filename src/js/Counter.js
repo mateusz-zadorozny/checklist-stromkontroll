@@ -6,8 +6,8 @@ function countCheckboxes() {
     var delayInMilliseconds = 200; //1 second
 
     setTimeout(function () {
-        var percentComplete = Math.round(document.querySelectorAll('input[type="checkbox"]:checked').length
-            / document.querySelectorAll('input[type="checkbox"]').length
+        var percentComplete = Math.round(document.querySelectorAll('input.list-element:checked').length
+            / document.querySelectorAll('input.list-element').length
             * 100);
         $('#percent').text(percentComplete);
         document.getElementById("indicator").style.width = percentComplete + "%";

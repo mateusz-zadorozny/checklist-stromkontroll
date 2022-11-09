@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+    title: string;
     english: string;
     id: string;
     link: string;
@@ -11,56 +11,83 @@ export interface Props {
 const { title, english, id, link, linkEN, linkSet } = Astro.props;
 ---
 
-
 <div class="flex flex-row mb-8">
-    <input type="checkbox" id={id} class="cursor-pointer check label-click mr-2 shrink-0 self-center"/>
-    <label for={id} class="cursor-pointer text-darkblue text-xl ml-4 self-center">
-        <span><!-- This span is needed to create the "checkbox" element --></span>
-        <span class="noNB">{title}{linkSet && <span> </span>
-            <a target="_blank" href={link}>Trykk her for manual.</a>}</span>
-        <span class="enEN">{english}{linkSet && <span> </span>
-            <a target="_blank" href={linkEN}>Click here for the manual.</a>}</span>
+    <input
+        type="checkbox"
+        id={id}
+        class="list-element cursor-pointer check label-click mr-2 shrink-0 self-center"
+    />
+    <label
+        for={id}
+        class="cursor-pointer text-darkblue text-xl ml-4 self-center"
+    >
+        <span
+            ><!-- This span is needed to create the "checkbox" element -->
+        </span>
+        <span class="noNB"
+            >{title}{
+                linkSet && (
+                    <>
+                        <span> </span>
+                        <a target="_blank" href={link}>
+                            Trykk her for manual.
+                        </a>
+                    </>
+                )
+            }</span
+        >
+        <span class="enEN"
+            >{english}{
+                linkSet && (
+                    <>
+                        <span> </span>
+                        <a target="_blank" href={linkEN}>
+                            Click here for the manual.
+                        </a>
+                    </>
+                )
+            }</span
+        >
     </label>
-    
 </div>
 
 <style>
+    label {
+        transition: opacity 350ms ease-in-out;
+    }
 
-label {
-    transition: opacity 350ms ease-in-out;
-}
+    .check:checked + label {
+        opacity: 0.3;
+        text-decoration: line-through;
+    }
 
-.check:checked + label {
-    opacity: 0.3;
-    text-decoration: line-through;
-}
+    span.noNB a,
+    span.enEN a {
+        text-decoration: underline;
+    }
 
-span.noNB a, span.enEN a {
-    text-decoration: underline;
-}
+    input[type="checkbox"],
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        font: inherit;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+    }
 
-input[type="checkbox"], input[type="radio"] {
-  appearance: none;
-  background-color: #fff;
-  font: inherit;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-}
+    input[type="checkbox"]:checked {
+        background-color: #022a46;
+        width: 44px;
+        height: 44px;
+        border: 7px solid #fff;
+    }
 
-input[type="checkbox"]:checked {
-	background-color: #022A46;
-	width: 44px;
-    height: 44px;
-	border: 7px solid #FFF;
-}
+    body.enEN span.noNB {
+        display: none;
+    }
 
-body.enEN span.noNB {
-		display: none;
-	}
-
-body.noNB span.enEN {
-		display: none;
-	}
-
+    body.noNB span.enEN {
+        display: none;
+    }
 </style>
