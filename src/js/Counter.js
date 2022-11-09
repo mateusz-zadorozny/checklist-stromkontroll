@@ -1,7 +1,6 @@
 var completedInstallation = false;
 
 function countCheckboxes() {
-    //alert($('.check-box :checked').size());
 
     var delayInMilliseconds = 200; //1 second
 
